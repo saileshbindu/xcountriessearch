@@ -22,7 +22,7 @@ const Xcountriessearch = () => {
     return (
       <div className="countryCard">
         <img src={imageURL} alt={imageAlt} />
-        <h3>{title}</h3>
+        <p>{title}</p>
       </div>
     );
   };
