@@ -28,12 +28,12 @@ return(<div className="courtriesMain">
 
 return(<div>
     <input type="text" value={searchVal} placeholder="Search" onChange={(e) => setsearchVal(e.target.value)}/>
-    <div className="countryCard">
-        {filterCountry.map((item) =>(
+   
+       {filterCountry.length === 0 ? (<div>No result Found</div>) :  ( <div className="countryCard">{filterCountry.map((item) =>(
             <CountryCard key={item.cca3} imageURL={item.flags.png} imageAlt={item.flags.alt} title={item.name.common} />
-        ))}
+        ))}</div>)}
         
-    </div>
+  
 </div>)
 }
 
