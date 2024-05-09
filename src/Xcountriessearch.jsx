@@ -3,20 +3,20 @@ import { useState } from "react";
 import './xcountriessearch.css'
 
 const Xcountriessearch = () =>{
-const [country, setCountry] = useState([])
+const [countries, setCountries] = useState([])
 const [searchVal, setsearchVal]=useState("")
 const countryURL = "https://restcountries.com/v3.1/all";
 
 useEffect(()=>{
     fetch(countryURL)
     .then((response) =>response.json())
-    .then((data) => setCountry(data))
+    .then((data) => setCountries(data))
     .catch((error)=> console.log(error))
 
 },[]);
 
 
-const filterCountry = country.filter((item)=>item.name.common.toLowerCase().includes(searchVal.toLowerCase()))
+const filterCountry = countries.filter((item)=>item.name.common.toLowerCase().includes(searchVal.toLowerCase()))
 
 
 const CountryCard = ({imageURL, imageAlt, title}) =>{
