@@ -1,0 +1,20 @@
+.countryCard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.courtriesMain{
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+}
+.courtriesMain img{
+    width: 100px;
+}
