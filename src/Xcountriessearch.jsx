@@ -5,10 +5,10 @@ import './xcountriessearch.css'
 const Xcountriessearch = () =>{
 const [countries, setCountries] = useState([])
 const [searchVal, setsearchVal]=useState("")
-const countryURL = "https://restcountries.com/v3.1/all";
+const countriesURL = "https://restcountries.com/v3.1/all";
 
 useEffect(()=>{
-    fetch(countryURL)
+    fetch(countriesURL)
     .then((response) =>response.json())
     .then((data) => setCountries(data))
     .catch((error)=> console.log(error))
@@ -16,7 +16,7 @@ useEffect(()=>{
 },[]);
 
 
-const filterCountry = countries.filter((item)=>item.name.common.toLowerCase().includes(searchVal.toLowerCase()))
+const filteredCountries = countries.filter((item)=>item.name.common.toLowerCase().includes(searchVal.toLowerCase()))
 
 
 const CountryCard = ({imageURL, imageAlt, title}) =>{
@@ -29,7 +29,7 @@ return(<div className="courtriesMain">
 return(<div>
     <input type="text" value={searchVal} placeholder="Search" onChange={(e) => setsearchVal(e.target.value)}/>
    
-       {filterCountry.length === 0 ? (<div>No result Found</div>) :  ( <div className="countryCard">{filterCountry.map((item) =>(
+       {filteredCountries.length === 0 ? (<div>No result Found</div>) :  ( <div className="countryCard">{filteredCountries.map((item) =>(
             <CountryCard key={item.cca3} imageURL={item.flags.png} imageAlt={item.flags.alt} title={item.name.common} />
         ))}</div>)}
         
