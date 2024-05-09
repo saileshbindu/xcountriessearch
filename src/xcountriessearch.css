@@ -1,9 +1,9 @@
-.countryCard{
+.courtriesMain{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.courtriesMain{
+.countryCard{
     width: 130px;
     height: 130px;
     display: flex;

@@ -20,7 +20,7 @@ const Xcountriessearch = () => {
 
   const CountryCard = ({ imageURL, imageAlt, title }) => {
     return (
-      <div className="courtriesMain">
+      <div className="countryCard">
         <img src={imageURL} alt={imageAlt} />
         <h3>{title}</h3>
       </div>
@@ -39,7 +39,7 @@ const Xcountriessearch = () => {
       {filteredCountries.length === 0 ? (
         <div>No result Found</div>
       ) : (
-        <div className="countryCard">
+        <div className="courtriesMain">
           {filteredCountries.map((item) => (
             <CountryCard
               key={item.cca3}
