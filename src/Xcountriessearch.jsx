@@ -36,10 +36,7 @@ const Xcountriessearch = () => {
         onChange={(e) => setsearchVal(e.target.value)}
       />
 
-      {filteredCountries.length === 0 ? (
-        <div>No result Found</div>
-      ) : (
-        <div className="courtriesMain">
+<div className="courtriesMain">
           {filteredCountries.map((item) => (
             <CountryCard
               key={item.cca3}
@@ -49,7 +46,6 @@ const Xcountriessearch = () => {
             />
           ))}
         </div>
-      )}
     </div>
   );
 };
