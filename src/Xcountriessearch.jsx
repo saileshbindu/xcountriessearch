@@ -15,7 +15,7 @@ const Xcountriessearch = () => {
   }, []);
 
   const filteredCountries = countries.filter((item) =>
-    item.name.common.includes(searchVal)
+    item.name.common.toLowerCase().includes(searchVal.toLowerCase())
   );
 
   const CountryCard = ({ imageURL, imageAlt, title }) => {
